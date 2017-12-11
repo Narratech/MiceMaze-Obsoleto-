@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RatMovement : MonoBehaviour {
+public class MouseMovement : MonoBehaviour{
 
 
     public int m_PlayerNumber = 1;
-    
+
 
 
     private Rigidbody m_Rigidbody;
@@ -27,12 +27,14 @@ public class RatMovement : MonoBehaviour {
     }
 
 
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

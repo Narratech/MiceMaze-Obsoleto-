@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour {
     public GameObject m_WallT;
     public GameObject m_WallX;
     public GameObject[] m_SpawnList = new GameObject[4];
-    public RatManager[] m_Rats;
-    public GameObject m_RatPrefab;
+    public MouseManager[] m_Mouse;
+    public GameObject m_MousePrefab;
     
  
 
@@ -116,13 +116,13 @@ public class GameManager : MonoBehaviour {
     private void SpawnAllRats()
     {
         
-        for (int i = 0; i < m_Rats.Length; i++)
+        for (int i = 0; i < m_Mouse.Length; i++)
         {
            
-            m_Rats[i].m_Instance =
-                Instantiate(m_RatPrefab, m_SpawnList[i].transform.position, m_SpawnList[i].transform.rotation) as GameObject;
-            m_Rats[i].m_PlayerNumber = i + 1;
-            m_Rats[i].Setup();
+            m_Mouse[i].m_Instance =
+                Instantiate(m_MousePrefab, m_SpawnList[i].transform.position, m_SpawnList[i].transform.rotation) as GameObject;
+            m_Mouse[i].m_PlayerNumber = i + 1;
+            m_Mouse[i].Setup();
         }
         
     }
@@ -130,8 +130,8 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     private IEnumerator GameLoop()
     {
-		
-	}
+        yield return m_StartWait;
+    }
 
     private IEnumerator RoundStarting()
     {

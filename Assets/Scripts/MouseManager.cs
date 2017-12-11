@@ -2,19 +2,19 @@
 using UnityEngine;
 
 [Serializable]
-public class RatManager {
+public class MouseManager{
 
 
     public Color m_PlayerColor;
-    
-    [HideInInspector] public int m_PlayerNumber;           
+
+    [HideInInspector] public int m_PlayerNumber;
     [HideInInspector] public GameObject m_Instance;
 
-    private RatMovement m_Movement;
+    private MouseMovement m_Movement;
 
     public void Setup()
     {
-        m_Movement = m_Instance.GetComponent<RatMovement>();
+        m_Movement = m_Instance.GetComponent<MouseMovement>();
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
 
@@ -30,18 +30,18 @@ public class RatManager {
     public void DisableControl()
     {
         m_Movement.enabled = false;
-       
+
     }
 
     public void EnableControl()
     {
         m_Movement.enabled = true;
-       
+
     }
 
     public void Reset()
     {
-       
+
 
         m_Instance.SetActive(false);
         m_Instance.SetActive(true);
