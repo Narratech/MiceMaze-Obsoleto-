@@ -138,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327762192
 GameObject:
@@ -166,35 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &904503458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 904503459}
-  m_Layer: 0
-  m_Name: Maze
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &904503459
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 904503458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.025437593, y: 1, z: -1.1792665}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923868196
 GameObject:
@@ -222,7 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &944446336
 GameObject:
@@ -396,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919db88021ad313408c16018db90e3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NumTurnos: 0
-  m_StartDelay: 3
+  m_NumTurnos: 8
+  m_StartDelay: 0
   m_EndDelay: 3
   m_Tile: {fileID: 1998165505786850, guid: 5a20a8d91643bb748831719480e7693c, type: 2}
   m_Border: {fileID: 1278128194091264, guid: 7138b6d227f09914a8f5b026c8cc6908, type: 2}
@@ -411,12 +383,16 @@ MonoBehaviour:
   - {fileID: 923868196}
   - {fileID: 327762192}
   m_Mouse:
-  - m_PlayerColor: {r: 0.75, g: 0.19301471, b: 0.19301471, a: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SpawnPoint: {fileID: 0}
     m_PlayerNumber: 0
     m_Instance: {fileID: 0}
-  - m_PlayerColor: {r: 0.14035465, g: 0.86764705, b: 0.35603446, a: 0}
+    m_Position: {x: 0, y: 0, z: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SpawnPoint: {fileID: 0}
     m_PlayerNumber: 0
     m_Instance: {fileID: 0}
+    m_Position: {x: 0, y: 0, z: 0}
   m_MousePrefab: {fileID: 1022385538339912, guid: 87a74f492de507f4590971236f453458,
     type: 2}
 --- !u!4 &1392028998
@@ -458,5 +434,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

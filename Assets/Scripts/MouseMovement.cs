@@ -26,15 +26,39 @@ public class MouseMovement : MonoBehaviour{
         m_Rigidbody.isKinematic = true;
     }
 
-
-    void Start()
+    public bool Move(GameObject tile, Vector3 position)
     {
-
+        bool moved = false;
+        GameObject contains = tile.GetComponent<TileManager>().contains;
+        Vector3 pos = tile.transform.position;
+        pos.y = 2.5f;
+        
+        if (contains == null)
+        {
+            if (position.z + 10 == pos.z && position.x == pos.x)
+            {
+                m_Rigidbody.transform.SetPositionAndRotation(pos, tile.transform.rotation);
+                moved = true;
+            }
+            if (position.z - 10 == pos.z && position.x == pos.x)
+            {
+                m_Rigidbody.transform.SetPositionAndRotation(pos, tile.transform.rotation);
+                moved = true;
+            }
+            if (position.z == pos.z && position.x + 10 == pos.x)
+            {
+                m_Rigidbody.transform.SetPositionAndRotation(pos, tile.transform.rotation);
+                moved = true;
+            }
+            if (position.z == pos.z && position.x - 10 == pos.x)
+            {
+                m_Rigidbody.transform.SetPositionAndRotation(pos, tile.transform.rotation);
+                moved = true;
+            }
+        }
+        
+        return moved;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

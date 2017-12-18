@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - Fondo
-  - 
-  - 
+  - Tiles
+  - Walls
+  - Player
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
+  - name: Tiles
     uniqueID: 61417549
+    locked: 0
+  - name: Walls
+    uniqueID: 1460234363
+    locked: 0
+  - name: Player
+    uniqueID: 225509207
     locked: 0
