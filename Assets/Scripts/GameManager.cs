@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Xml.Linq;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +32,7 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
     private static int m_MazeLength = 8;
+    private TextAsset mace;
 
 
 
@@ -46,8 +54,8 @@ public class GameManager : MonoBehaviour
         int z = 0;
         // int rX = 90; //eje x rotation
         int rZ = 0;  //eje z rotation
-        //var TileCollection = TileContainer.Load(Path.Combine(Application.dataPath, "maze.xml"));
-        //var TileCollection = TileContainer.Load("maze.xml");
+        mace = Resources.Load("mace") as TextAsset;
+       
         Vector3 newPosition = new Vector3();
         Quaternion newRotation = new Quaternion();
         //Instance the tiles of the maze
@@ -61,7 +69,7 @@ public class GameManager : MonoBehaviour
 
                 GameObject tile = Instantiate(m_Tile, newPosition, newRotation);
                 tile.GetComponent<TileManager>().SetPosition(c, i);
-                /*switch (TileCollection.m_Tiles[cont].m_Contains)
+                /*switch ()
                 {
                     case "Empty": break;
                     case "Spawn":
