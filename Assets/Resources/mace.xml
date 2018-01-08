@@ -1,274 +1,210 @@
-<TileCollection lenght = 8>
+<TileCollection>
 	
 	<Tiles>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Spawn">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="WallI">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Spawn">
 			<Rotation>0</Rotation>
 		</Tile>
-	
-	
-		<Tile>
-			<Contains>Empty</Contains>
+
+		
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 	
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 	
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 	
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 		
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 	
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 	
 	
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Spawn">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile>
-			<Contains>Empty</Contains>
+		<Tile contains="Spawn">
 			<Rotation>0</Rotation>
 		</Tile>
 	</Tiles>

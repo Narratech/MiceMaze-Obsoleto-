@@ -1,15 +1,8 @@
 ﻿using System.Collections;
-using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-using System;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Xml.Linq;
+
+
 
 
 public class GameManager : MonoBehaviour
@@ -32,7 +25,7 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
     private static int m_MazeLength = 8;
-    private TextAsset mace;
+    
 
 
 
@@ -54,8 +47,8 @@ public class GameManager : MonoBehaviour
         int z = 0;
         // int rX = 90; //eje x rotation
         int rZ = 0;  //eje z rotation
-        mace = Resources.Load("mace") as TextAsset;
-       
+
+        var TileCollection = TileContainer.Load();
         Vector3 newPosition = new Vector3();
         Quaternion newRotation = new Quaternion();
         //Instance the tiles of the maze
@@ -69,10 +62,12 @@ public class GameManager : MonoBehaviour
 
                 GameObject tile = Instantiate(m_Tile, newPosition, newRotation);
                 tile.GetComponent<TileManager>().SetPosition(c, i);
-                /*switch ()
+               
+                switch (TileCollection.Tiles[cont].Contains)
                 {
                     case "Empty": break;
                     case "Spawn":
+                       
                         newPosition.y = 2.5f;
                         m_SpawnList[contSpawns].transform.SetPositionAndRotation(newPosition, newRotation);
                         contSpawns++;
@@ -80,63 +75,36 @@ public class GameManager : MonoBehaviour
                         break;
                     case "WallI":
                         newPosition.y = 5f;
-                        newRotation.Set(0, TileCollection.m_Tiles[cont].m_Rotation, 0, 0);
+                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
                         GameObject wallI = Instantiate(m_WallI, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallI);
                         newPosition.y = 0f;
                         break;
                     case "WallL":
                         newPosition.y = 5f;
-                        newRotation.Set(0, TileCollection.m_Tiles[cont].m_Rotation, 0, 0);
+                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
                         GameObject wallL = Instantiate(m_WallI, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallL);
                         newPosition.y = 0f;
                         break;
                     case "WallT":
                         newPosition.y = 5f;
-                        newRotation.Set(0, TileCollection.m_Tiles[cont].m_Rotation, 0, 0);
+                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
                         GameObject wallT = Instantiate(m_WallI, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallT);
                         newPosition.y = 0f;
                         break;
                     case "WallX":
                         newPosition.y = 5f;
-                        newRotation.Set(0, TileCollection.m_Tiles[cont].m_Rotation, 0, 0);
+                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
                         GameObject wallX = Instantiate(m_WallI, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallX);
                         newPosition.y = 0f;
                         break;
 
-                }*/
-                if (c == 0 && i == 0)
-                {
-                    newPosition.x = m_Tile.transform.position.x + i * 10;
-                    newPosition.z = z;
-                    newPosition.y = 2.5f;
-                    m_SpawnList[0].transform.SetPositionAndRotation(newPosition, newRotation);
-
                 }
-                if (c == 0 && i == m_MazeLength - 1)
-                {
-                    newPosition.x = m_Tile.transform.position.x + i * 10;
-                    newPosition.z = z;
-                    newPosition.y = 2.5f;
-                    m_SpawnList[1].transform.SetPositionAndRotation(newPosition, newRotation);
-                }
-                if (c == m_MazeLength - 1 && i == 0)
-                {
-                    newPosition.x = m_Tile.transform.position.x + i * 10;
-                    newPosition.z = z;
-                    newPosition.y = 2.5f;
-                    m_SpawnList[2].transform.SetPositionAndRotation(newPosition, newRotation);
-                }
-                if (c == m_MazeLength - 1 && i == m_MazeLength - 1)
-                {
-                    newPosition.x = m_Tile.transform.position.x + i * 10;
-                    newPosition.z = z;
-                    newPosition.y = 2.5f;
-                    m_SpawnList[3].transform.SetPositionAndRotation(newPosition, newRotation);
-                }
+                cont++;
+                newRotation = Quaternion.Euler(0, 0, 0);
                 newPosition.y = 0f;
             }
             z = z + 10;
