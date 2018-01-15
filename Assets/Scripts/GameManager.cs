@@ -37,9 +37,9 @@ public class GameManager : MonoBehaviour
         m_EndWait = new WaitForSeconds(m_EndDelay);
 
         CreateMaze();
-        SpawnAllRats();
+        //SpawnAllMouses();
 
-        StartCoroutine(GameLoop());
+        //StartCoroutine(GameLoop());
     }
 
     private void CreateMaze()
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         Instantiate(m_Border, newPosition, newRotation);
     }
 
-    private void SpawnAllRats()
+    private void SpawnAllMouses()
     {
 
         for (int i = 0; i < m_Mouse.Length; i++)

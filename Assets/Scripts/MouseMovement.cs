@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class MouseMovement : MonoBehaviour{
+public class MouseMovement : NetworkBehaviour{
 
 
     public int m_PlayerNumber = 1;
@@ -25,6 +26,30 @@ public class MouseMovement : MonoBehaviour{
         m_Rigidbody.isKinematic = true;
     }
 
+    private void Update()
+    {
+        RaycastHit hit;
+        Ray ray;
+        int layerMask = 1 << 8;
+
+        if (!isLocalPlayer )
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, layerMask))
+            {
+
+                Move(hit.collider.gameObject, m_Rigidbody.position);
+                
+
+            }
+        }
+    }
+
     public bool Move(GameObject tile, Vector3 position)
     {
         bool moved = false;
@@ -34,9 +59,8 @@ public class MouseMovement : MonoBehaviour{
      
         if (contains == null)
         {
-            if (position.z + 10 == pos.z && position.x == pos.x)
+            /*if (position.z + 10 == pos.z && position.x == pos.x)
             {
-
                 StartCoroutine(MoveAnimation(0, 0.1f, tile));
                 moved = true;
             }
@@ -54,8 +78,9 @@ public class MouseMovement : MonoBehaviour{
             {
                 StartCoroutine(MoveAnimation(-0.1f, 0, tile));
                 moved = true;
-            }
-            
+            }*/
+            StartCoroutine(MoveAnimation(-0.1f, 0, tile));
+
         }
         
         return moved;

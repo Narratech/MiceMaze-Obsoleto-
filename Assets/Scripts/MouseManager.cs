@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+
 [Serializable]
 public class MouseManager{
 
@@ -19,9 +20,10 @@ public class MouseManager{
         m_Movement = m_Instance.GetComponent<MouseMovement>();
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
+        
+        
 
-      
-
+        
         MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
 
         for (int i = 0; i < renderers.Length; i++)
