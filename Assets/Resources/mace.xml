@@ -4,7 +4,13 @@
 		<Tile contains="Spawn">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
@@ -30,6 +36,44 @@
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
+		<Tile contains="WallL">
+			<Rotation>180</Rotation>
+		</Tile>
+		<Tile contains="WallI">
+			<Rotation>90</Rotation>
+		</Tile>
+		<Tile contains="WallL">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallL">
+			<Rotation>270</Rotation>
+		</Tile>
+		<Tile contains="WallI">
+			<Rotation>90</Rotation>
+		</Tile>
+		<Tile contains="WallL">
+			<Rotation>90</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+	
+	
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallI">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
@@ -59,52 +103,6 @@
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-	
-	
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
-		</Tile>
-	
-	
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
@@ -130,11 +128,104 @@
 			<Rotation>0</Rotation>
 		</Tile>
 		
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>	
 	
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
+		<Tile contains="WallL">
+			<Rotation>90</Rotation>
+		</Tile>
 		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallL">
+			<Rotation>180</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		
+	
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallI">
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
@@ -150,6 +241,12 @@
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallI">
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
@@ -160,8 +257,14 @@
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
+		<Tile contains="WallL">
+			<Rotation>270</Rotation>
+		</Tile>
+		<Tile contains="WallI">
+			<Rotation>90</Rotation>
+		</Tile>
+		<Tile contains="WallL">
+			<Rotation>90</Rotation>
 		</Tile>
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
@@ -172,10 +275,10 @@
 		<Tile contains="Empty">
 			<Rotation>0</Rotation>
 		</Tile>
-		<Tile contains="Empty">
-			<Rotation>0</Rotation>
+		<Tile contains="WallL">
+			<Rotation>180</Rotation>
 		</Tile>
-		<Tile contains="Empty">
+		<Tile contains="WallL">
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
@@ -199,6 +302,12 @@
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="Empty">
+			<Rotation>0</Rotation>
+		</Tile>
+		<Tile contains="WallI">
 			<Rotation>0</Rotation>
 		</Tile>
 		<Tile contains="Empty">

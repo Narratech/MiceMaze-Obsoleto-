@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
-    private static int m_MazeLength = 8;
+    private static int m_MazeLength = 10;
     
 
 
@@ -83,21 +83,21 @@ public class GameManager : MonoBehaviour
                     case "WallL":
                         newPosition.y = 5f;
                         newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
-                        GameObject wallL = Instantiate(m_WallI, newPosition, newRotation);
+                        GameObject wallL = Instantiate(m_WallL, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallL);
                         newPosition.y = 0f;
                         break;
                     case "WallT":
                         newPosition.y = 5f;
                         newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
-                        GameObject wallT = Instantiate(m_WallI, newPosition, newRotation);
+                        GameObject wallT = Instantiate(m_WallT, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallT);
                         newPosition.y = 0f;
                         break;
                     case "WallX":
                         newPosition.y = 5f;
                         newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
-                        GameObject wallX = Instantiate(m_WallI, newPosition, newRotation);
+                        GameObject wallX = Instantiate(m_WallX, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallX);
                         newPosition.y = 0f;
                         break;
@@ -112,26 +112,26 @@ public class GameManager : MonoBehaviour
         //Instance the walls of the maze
         newPosition.y = 5;
 
-        newPosition.x = 35;
+        newPosition.x = 45;
         newPosition.z = -5;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 270;
         newPosition.x = -5;
-        newPosition.z = 35;
+        newPosition.z = 45;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 180;
-        newPosition.x = 35;
-        newPosition.z = 75;
+        newPosition.x = 45;
+        newPosition.z = 95;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 90;
-        newPosition.x = 75;
-        newPosition.z = 35;
+        newPosition.x = 95;
+        newPosition.z = 45;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
     }
