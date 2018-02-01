@@ -31,6 +31,7 @@ public class MouseMovement : NetworkBehaviour{
         RaycastHit hit;
         Ray ray;
         int layerMask = 1 << 8;
+        Vector3 pos = new Vector3();
 
         if (!isLocalPlayer )
         {
@@ -42,8 +43,10 @@ public class MouseMovement : NetworkBehaviour{
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, layerMask))
             {
-
-                Move(hit.collider.gameObject, m_Rigidbody.position);
+                pos.x = (int) m_Rigidbody.position.x / 10;
+                pos.y = 2.5f;
+                pos.z = (int)m_Rigidbody.position.z / 10;
+                Move(hit.collider.gameObject, pos);
                 
 
             }
@@ -54,32 +57,32 @@ public class MouseMovement : NetworkBehaviour{
     {
         bool moved = false;
         GameObject contains = tile.GetComponent<TileManager>().contains;
-        Vector3 pos = tile.transform.position;
+        Vector3 pos = tile.GetComponent<TileManager>().GetPosition();
         pos.y = 2.5f;
      
         if (contains == null)
         {
-            /*if (position.z + 10 == pos.z && position.x == pos.x)
+            if (position.z + 1 == pos.z && position.x == pos.x)
             {
                 StartCoroutine(MoveAnimation(0, 0.1f, tile));
                 moved = true;
             }
-            if (position.z - 10 == pos.z && position.x == pos.x)
+            if (position.z - 1 == pos.z && position.x == pos.x)
             {
                 StartCoroutine(MoveAnimation(0, -0.1f, tile));
                 moved = true;
             }
-            if (position.z == pos.z && position.x + 10 == pos.x)
+            if (position.z == pos.z && position.x + 1 == pos.x)
             {
                 StartCoroutine(MoveAnimation(0.1f, 0, tile));
                 moved = true;
             }
-            if (position.z == pos.z && position.x - 10 == pos.x)
+            if (position.z == pos.z && position.x - 1 == pos.x)
             {
                 StartCoroutine(MoveAnimation(-0.1f, 0, tile));
                 moved = true;
-            }*/
-            StartCoroutine(MoveAnimation(-0.1f, 0, tile));
+            }
+           
 
         }
         

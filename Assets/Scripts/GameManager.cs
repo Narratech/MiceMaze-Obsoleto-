@@ -48,22 +48,22 @@ public class GameManager : MonoBehaviour
         // int rX = 90; //eje x rotation
         int rZ = 0;  //eje z rotation
 
-        var TileCollection = TileContainer.Load();
+        var maze = Maze.Load();
         Vector3 newPosition = new Vector3();
         Quaternion newRotation = new Quaternion();
         //Instance the tiles of the maze
-        int cont = 0, contSpawns = 0;
-        for (int c = 0; c < m_MazeLength; c++)
+        int contSpawns = 0;
+        for (int cont = 0; cont < m_MazeLength*m_MazeLength; cont++)
         {
-            for (int i = 0; i < m_MazeLength; i++)
-            {
-                newPosition.x = m_Tile.transform.position.x + i * 10;
-                newPosition.z = z;
+           
+            
+                newPosition.x = maze.Tiles[cont].X * 10;
+                newPosition.z = maze.Tiles[cont].Z * 10;
 
                 GameObject tile = Instantiate(m_Tile, newPosition, newRotation);
-                tile.GetComponent<TileManager>().SetPosition(c, i);
+                tile.GetComponent<TileManager>().SetPosition(maze.Tiles[cont].X, maze.Tiles[cont].Z);
                
-                switch (TileCollection.Tiles[cont].Contains)
+                switch (maze.Tiles[cont].Contains)
                 {
                     case "Empty": break;
                     case "Spawn":
@@ -75,63 +75,62 @@ public class GameManager : MonoBehaviour
                         break;
                     case "WallI":
                         newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
+                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
                         GameObject wallI = Instantiate(m_WallI, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallI);
                         newPosition.y = 0f;
                         break;
                     case "WallL":
                         newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
+                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
                         GameObject wallL = Instantiate(m_WallL, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallL);
                         newPosition.y = 0f;
                         break;
                     case "WallT":
                         newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
+                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
                         GameObject wallT = Instantiate(m_WallT, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallT);
                         newPosition.y = 0f;
                         break;
                     case "WallX":
                         newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, TileCollection.Tiles[cont].Rotation, 0);
+                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
                         GameObject wallX = Instantiate(m_WallX, newPosition, newRotation);
                         tile.GetComponent<TileManager>().SetContains(wallX);
                         newPosition.y = 0f;
                         break;
 
                 }
-                cont++;
+               
                 newRotation = Quaternion.Euler(0, 0, 0);
                 newPosition.y = 0f;
-            }
-            z = z + 10;
+            
         }
         //Instance the walls of the maze
         newPosition.y = 5;
 
-        newPosition.x = 45;
+        newPosition.x = (m_MazeLength * 10 / 2) - 5;
         newPosition.z = -5;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 270;
         newPosition.x = -5;
-        newPosition.z = 45;
+        newPosition.z = (m_MazeLength * 10 / 2) - 5;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 180;
-        newPosition.x = 45;
-        newPosition.z = 95;
+        newPosition.x = (m_MazeLength * 10 / 2) - 5;
+        newPosition.z = (m_MazeLength * 10) - 5;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
 
         rZ = 90;
-        newPosition.x = 95;
-        newPosition.z = 45;
+        newPosition.x = (m_MazeLength * 10) - 5;
+        newPosition.z = (m_MazeLength * 10 / 2) - 5;
         newRotation = Quaternion.Euler(90f, 0f, rZ);
         Instantiate(m_Border, newPosition, newRotation);
     }
@@ -145,7 +144,8 @@ public class GameManager : MonoBehaviour
             m_Mouse[i].m_Instance =
                 Instantiate(m_MousePrefab, m_SpawnList[i].transform.position, m_SpawnList[i].transform.rotation) as GameObject;
             m_Mouse[i].m_SpawnPoint = m_SpawnList[i].transform;
-            m_Mouse[i].SetPosition(m_SpawnList[i].transform.position);
+            Vector3 pos = new Vector3(m_SpawnList[i].transform.position.x/10, m_SpawnList[i].transform.position.y, m_SpawnList[i].transform.position.z / 10);
+            m_Mouse[i].SetPosition(pos);
             m_Mouse[i].m_PlayerNumber = i + 1;
             m_Mouse[i].Setup();
         }

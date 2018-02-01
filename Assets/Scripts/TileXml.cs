@@ -9,6 +9,8 @@ public class TileXml
 
     public float Rotation;
 
-    
+    public int X;
+
+    public int Z;
 
 }

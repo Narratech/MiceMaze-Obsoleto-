@@ -2,17 +2,18 @@
 
 public class TileManager : MonoBehaviour {
 
-	private Vector2 position;
+	public Vector3 position;
 	public GameObject contains;
 
  
-    public void SetPosition(int x, int y)
+    public void SetPosition(int x, int z)
 	{
 		position.x = x;
-		position.y = y;
+		position.y = 0;
+        position.z = z;
 	}
 
-	public Vector2 GetPosition()
+	public Vector3 GetPosition()
 	{
 		return position;
 	}

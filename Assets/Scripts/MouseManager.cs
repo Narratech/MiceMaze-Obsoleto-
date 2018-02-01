@@ -11,7 +11,7 @@ public class MouseManager{
 
     [HideInInspector] public int m_PlayerNumber;
     [HideInInspector] public GameObject m_Instance;
-    [HideInInspector] public Vector3 m_Position;
+     public Vector3 m_Position;
 
     private MouseMovement m_Movement;
 
@@ -45,7 +45,9 @@ public class MouseManager{
         newPosition = position;
 
         if(m_Movement.Move(tile, position)){
-            newPosition = tile.transform.position;
+
+            newPosition = tile.GetComponent<TileManager>().GetPosition();
+            newPosition.y = 2.5f;
             moved = true;
         }
         
