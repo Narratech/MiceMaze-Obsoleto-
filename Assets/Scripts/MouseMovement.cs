@@ -11,6 +11,11 @@ public class MouseMovement : NetworkBehaviour{
 
     private Rigidbody m_Rigidbody;
 
+    public override void OnStartLocalPlayer()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+    }
+
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
