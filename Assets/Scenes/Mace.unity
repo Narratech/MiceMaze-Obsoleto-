@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &189644008
 GameObject:
@@ -642,6 +638,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1099725811
 Transform:
   m_ObjectHideFlags: 0
@@ -818,10 +815,7 @@ MonoBehaviour:
   m_EndDelay: 3
   m_Tile: {fileID: 1998165505786850, guid: 5a20a8d91643bb748831719480e7693c, type: 2}
   m_Border: {fileID: 1278128194091264, guid: 7138b6d227f09914a8f5b026c8cc6908, type: 2}
-  m_WallI: {fileID: 1063523091758536, guid: c87fc038c6c10ef4497c178320c25f36, type: 2}
-  m_WallL: {fileID: 1613091765704638, guid: cb491bc3d15832d4e96788eec0b679ec, type: 2}
-  m_WallT: {fileID: 1324482928644032, guid: 1a0a4b5ebef09da42aa911c0d5ac6e93, type: 2}
-  m_WallX: {fileID: 1764696252946890, guid: 9304835de3f3fde4eb3b2bb47331fd5d, type: 2}
+  m_Wall: {fileID: 1594480928282020, guid: c2133276373144e4ba30c37b5fcbcf73, type: 2}
   m_SpawnList:
   - {fileID: 189644008}
   - {fileID: 1013382285}

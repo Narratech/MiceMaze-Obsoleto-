@@ -13,10 +13,7 @@ public class GameManager : MonoBehaviour
     public float m_EndDelay = 3f;
     public GameObject m_Tile;
     public GameObject m_Border;
-    public GameObject m_WallI;
-    public GameObject m_WallL;
-    public GameObject m_WallT;
-    public GameObject m_WallX;
+    public GameObject m_Wall;
     public GameObject[] m_SpawnList = new GameObject[4];
     public MouseManager[] m_Mouse;
     public GameObject m_MousePrefab;
@@ -44,8 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateMaze()
     {
-        int z = 0;
-        // int rX = 90; //eje x rotation
+       
         int rZ = 0;  //eje z rotation
 
         var maze = Maze.Load();
@@ -73,35 +69,20 @@ public class GameManager : MonoBehaviour
                         contSpawns++;
                         newPosition.y = 0f;
                         break;
-                    case "WallI":
+                    case "Wall":
                         newPosition.y = 5f;
                         newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
-                        GameObject wallI = Instantiate(m_WallI, newPosition, newRotation);
-                        tile.GetComponent<TileManager>().SetContains(wallI);
-                        newPosition.y = 0f;
-                        break;
-                    case "WallL":
-                        newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
-                        GameObject wallL = Instantiate(m_WallL, newPosition, newRotation);
-                        tile.GetComponent<TileManager>().SetContains(wallL);
-                        newPosition.y = 0f;
-                        break;
-                    case "WallT":
-                        newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
-                        GameObject wallT = Instantiate(m_WallT, newPosition, newRotation);
-                        tile.GetComponent<TileManager>().SetContains(wallT);
-                        newPosition.y = 0f;
-                        break;
-                    case "WallX":
-                        newPosition.y = 5f;
-                        newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
-                        GameObject wallX = Instantiate(m_WallX, newPosition, newRotation);
-                        tile.GetComponent<TileManager>().SetContains(wallX);
-                        newPosition.y = 0f;
-                        break;
+                        GameObject wall = Instantiate(m_Wall, newPosition, newRotation);
+                        MeshRenderer[] renderers = wall.GetComponentsInChildren<MeshRenderer>();
 
+                        for (int i = 0; i < renderers.Length; i++)
+                        {
+                            // ... set their material color to the color specific to this tank.
+                            renderers[i].material.color = Color.gray;
+                        }
+                        tile.GetComponent<TileManager>().SetContains(wall);
+                        newPosition.y = 0f;
+                        break;
                 }
                
                 newRotation = Quaternion.Euler(0, 0, 0);

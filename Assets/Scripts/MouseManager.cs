@@ -3,15 +3,16 @@ using UnityEngine;
 
 
 [Serializable]
-public class MouseManager{
+public class MouseManager
+{
 
 
-    public Color m_PlayerColor;
+    public Color m_PlayerColor = Color.red;
     public Transform m_SpawnPoint;
 
     [HideInInspector] public int m_PlayerNumber;
     [HideInInspector] public GameObject m_Instance;
-     public Vector3 m_Position;
+    public Vector3 m_Position;
 
     private MouseMovement m_Movement;
 
@@ -20,10 +21,10 @@ public class MouseManager{
         m_Movement = m_Instance.GetComponent<MouseMovement>();
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
-        
-        
 
-        
+
+
+
         MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
 
         for (int i = 0; i < renderers.Length; i++)
@@ -44,16 +45,17 @@ public class MouseManager{
 
         newPosition = position;
 
-        if(m_Movement.Move(tile, position)){
+        if (m_Movement.Move(tile, position))
+        {
 
             newPosition = tile.GetComponent<TileManager>().GetPosition();
             newPosition.y = 2.5f;
             moved = true;
         }
-        
+
 
         return moved;
-        
+
     }
 
     public void DisableControl()

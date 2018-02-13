@@ -63,17 +63,17 @@
 			<X>0</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>180</Rotation>
 			<X>1</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>2</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>3</X>
 			<Z>1</Z>
@@ -88,17 +88,17 @@
 			<X>5</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>270</Rotation>
 			<X>6</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>7</X>
 			<Z>1</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>8</X>
 			<Z>1</Z>
@@ -115,7 +115,7 @@
 			<X>0</X>
 			<Z>2</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>1</X>
 			<Z>2</Z>
@@ -320,7 +320,7 @@
 			<X>0</X>
 			<Z>6</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>1</X>
 			<Z>6</Z>
@@ -355,7 +355,7 @@
 			<X>7</X>
 			<Z>6</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>180</Rotation>
 			<X>8</X>
 			<Z>6</Z>
@@ -372,7 +372,7 @@
 			<X>0</X>
 			<Z>7</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>1</X>
 			<Z>7</Z>
@@ -407,7 +407,7 @@
 			<X>7</X>
 			<Z>7</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>8</X>
 			<Z>7</Z>
@@ -424,17 +424,17 @@
 			<X>0</X>
 			<Z>8</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>270</Rotation>
 			<X>1</X>
 			<Z>8</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>2</X>
 			<Z>8</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>90</Rotation>
 			<X>3</X>
 			<Z>8</Z>
@@ -454,12 +454,12 @@
 			<X>6</X>
 			<Z>8</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>180</Rotation>
 			<X>7</X>
 			<Z>8</Z>
 		</Tile>
-		<Tile contains="WallL">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>8</X>
 			<Z>8</Z>
@@ -506,7 +506,7 @@
 			<X>6</X>
 			<Z>9</Z>
 		</Tile>
-		<Tile contains="WallI">
+		<Tile contains="Wall">
 			<Rotation>0</Rotation>
 			<X>7</X>
 			<Z>9</Z>
