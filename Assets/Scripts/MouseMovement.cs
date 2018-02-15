@@ -16,52 +16,62 @@ public class MouseMovement : NetworkBehaviour{
         GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
-    private void Awake()
-    {
-        m_Rigidbody = GetComponent<Rigidbody>();
-        m_PlayerNumber = 5;
-    }
+	private void Awake()
+	{
+		m_Rigidbody = GetComponent<Rigidbody>();
+		m_Rigidbody.tag = "1";
+		print (m_Rigidbody.tag);
+		State.Turn = 2;
+	}
 
-    private void OnEnable()
-    {
-        m_Rigidbody.isKinematic = false;
-    }
+	private void OnEnable()
+	{
+		m_Rigidbody.isKinematic = false;
+	}
 
-    private void OnDisable()
-    {
-        m_Rigidbody.isKinematic = true;
-    }
+	private void OnDisable()
+	{
+		m_Rigidbody.isKinematic = true;
+	}
 
-    private void Update()
-    {
-        RaycastHit hit;
-        Ray ray;
-        int layerMask = 1 << 8;
-        Vector3 pos = new Vector3();
+	private void Update()
+	{
+		RaycastHit hit;
+		Ray ray;
+		int layerMask = 1 << 8;
+		Vector3 pos = new Vector3();
 
-        if (!isLocalPlayer)
-        {
-            return;
-        }
-       
-        if (Input.GetMouseButtonDown(0))
-        {
+		/*if(!isLocalPlayer){
+			return;
+		}*/
 
-            
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, layerMask))
-            {
-                pos.x = (int) m_Rigidbody.position.x / 10;
-                pos.y = 2.5f;
-                pos.z = (int)m_Rigidbody.position.z / 10;
-                if(hit.collider.gameObject.layer == 8)
-                {
-                    Move(hit.collider.gameObject, pos);
-                }
-               
-            }
-        }
-    }
+		if (Input.GetMouseButtonDown(0))
+		{ 
+			print ("state turn " + State.Turn);
+			print( "netid " + netId.Value);
+			if (State.Turn != netId.Value) {
+				return;
+			}
+			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray, out hit, layerMask))
+			{
+				pos.x = (int) m_Rigidbody.position.x / 10;
+				pos.y = 2.5f;
+				pos.z = (int)m_Rigidbody.position.z / 10;
+				if (hit.collider.gameObject.layer == 8) {
+					if (Move (hit.collider.gameObject, pos)) {
+						State.Turn++;
+						if (State.Turn > 3) {
+							State.Turn = 2;
+						}
+					}
+				}
+
+
+
+			}
+		}
+	}
 
     public bool Move(GameObject tile, Vector3 position)
     {
