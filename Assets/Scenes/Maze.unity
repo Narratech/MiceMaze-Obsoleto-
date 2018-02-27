@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -77,15 +77,18 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +110,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &189644008
 GameObject:
@@ -634,11 +639,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &1099725811
 Transform:
   m_ObjectHideFlags: 0
@@ -792,6 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1392028998}
   - component: {fileID: 1392028997}
+  - component: {fileID: 1392028999}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -813,14 +819,6 @@ MonoBehaviour:
   m_NumTurnos: 8
   m_StartDelay: 0
   m_EndDelay: 3
-  m_Tile: {fileID: 1998165505786850, guid: 5a20a8d91643bb748831719480e7693c, type: 2}
-  m_Border: {fileID: 1278128194091264, guid: 7138b6d227f09914a8f5b026c8cc6908, type: 2}
-  m_Wall: {fileID: 1594480928282020, guid: c2133276373144e4ba30c37b5fcbcf73, type: 2}
-  m_SpawnList:
-  - {fileID: 189644008}
-  - {fileID: 1013382285}
-  - {fileID: 923868196}
-  - {fileID: 327762192}
   m_Mouse:
   - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
     m_SpawnPoint: {fileID: 0}
@@ -847,6 +845,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1392028999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1392028996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f167d7bcb95f62b41ac0cd7b4673e35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Tile: {fileID: 1998165505786850, guid: 5a20a8d91643bb748831719480e7693c, type: 2}
+  m_Border: {fileID: 1278128194091264, guid: 7138b6d227f09914a8f5b026c8cc6908, type: 2}
+  m_Wall: {fileID: 1594480928282020, guid: c2133276373144e4ba30c37b5fcbcf73, type: 2}
+  m_SpawnList:
+  - {fileID: 189644008}
+  - {fileID: 1013382285}
+  - {fileID: 923868196}
+  - {fileID: 327762192}
 --- !u!1001 &1517312863
 Prefab:
   m_ObjectHideFlags: 0
