@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
 
 
 
-
-public class GameManager : MonoBehaviour
+public class GameManager :  NetworkBehaviour
 {
 
     public int m_NumTurnos;
@@ -18,9 +18,8 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
 
-    
-
-
+    [SyncVar]
+    public int turno = 1;
 
 
     // Use this for initialization
@@ -29,13 +28,16 @@ public class GameManager : MonoBehaviour
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
 
-       
         //SpawnAllMouses();
 
         //StartCoroutine(GameLoop());
     }
 
    
+   public void cambiarTurno(int amount)
+    {
+        turno += amount;
+    }
 
     /*private void SpawnAllMouses()
     {

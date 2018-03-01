@@ -4,9 +4,14 @@ using UnityEngine.Networking;
 
 public class MouseMovement : NetworkBehaviour{
 
-   
-    public int m_PlayerNumber = 1;
 
+    public int m_PlayerNumber = 0;//1;
+    public GameObject manager;
+
+    [SyncVar]
+    int mi_turno;
+
+    int turno_juego;
 
 
     private Rigidbody m_Rigidbody;
@@ -14,12 +19,24 @@ public class MouseMovement : NetworkBehaviour{
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.red;
+        //m_PlayerNumber = manager.contadorRatones;
+        //manager.incrementarRatones();
+    }
+
+    private void Start()
+    {
+        m_PlayerNumber = manager.GetComponent<GameManager>().turno;
+        manager.GetComponent<GameManager>().cambiarTurno(1);
     }
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_PlayerNumber = 5;
+        //m_PlayerNumber = 5;
+        //var manager = GetComponent<GameManager>();
+        //m_PlayerNumber = manager.contadorRatones;
+        //manager.incrementarRatones();
+        manager = GameObject.Find("GameManager");
     }
 
     private void OnEnable()
