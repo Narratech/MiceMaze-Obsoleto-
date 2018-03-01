@@ -45,13 +45,7 @@ public class MazeBuilder: MonoBehaviour {
 				newPosition.y = 5f;
 				newRotation = Quaternion.Euler(0, maze.Tiles[cont].Rotation, 0);
 				GameObject wall = Instantiate(m_Wall, newPosition, newRotation);
-				MeshRenderer[] renderers = wall.GetComponentsInChildren<MeshRenderer>();
-
-				for (int i = 0; i < renderers.Length; i++)
-				{
-					// ... set their material color to the color specific to this tank.
-					renderers[i].material.color = Color.gray;
-				}
+				
 				tile.GetComponent<TileManager>().SetContains(wall);
 				newPosition.y = 0f;
 				break;

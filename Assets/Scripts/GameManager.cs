@@ -11,7 +11,7 @@ public class GameManager :  NetworkBehaviour
     public int m_NumTurnos;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
-    public MouseManager[] m_Mouse;
+    public GameObject[] m_Mouses = new GameObject[4];
     public GameObject m_MousePrefab;
 
 
@@ -21,7 +21,7 @@ public class GameManager :  NetworkBehaviour
     [SyncVar]
     public int turno = 1;
 
-
+    public int contadorRatones = 0;
     // Use this for initialization
     void Start()
     {
@@ -30,14 +30,30 @@ public class GameManager :  NetworkBehaviour
 
         //SpawnAllMouses();
 
-        //StartCoroutine(GameLoop());
+        StartCoroutine(GameLoop());
     }
 
-   
-   public void cambiarTurno(int amount)
+    
+
+    public void IncrementaRatones()
     {
-        turno += amount;
+        contadorRatones++;
     }
+
+    
+    public void CambiarTurno()
+    {
+        turno++;
+        if(turno > contadorRatones)
+        {
+            turno = 1;
+        }
+           
+       
+    }
+
+ 
+
 
     /*private void SpawnAllMouses()
     {
@@ -56,9 +72,11 @@ public class GameManager :  NetworkBehaviour
 
     }*/
 
+
     // Update is called once per frame
     private IEnumerator GameLoop()
     {
+        print("hola");
         yield return StartCoroutine(RoundStarting());
 
         yield return StartCoroutine(RoundPlaying());
@@ -68,7 +86,7 @@ public class GameManager :  NetworkBehaviour
 
     private IEnumerator RoundStarting()
     {
-        ResetAllMouses();
+        
         DisableMouseControl();
        
         yield return m_StartWait;
@@ -76,33 +94,13 @@ public class GameManager :  NetworkBehaviour
 
     private IEnumerator RoundPlaying()
     {
-        bool moved = false;
-        Vector3 newPosition;
-        RaycastHit hit;
-        Ray ray;
-        int layerMask = 1 << 8;
         for (int c = 0; c<m_NumTurnos; c++)
         {
-            for(int i = 0; i<m_Mouse.Length; i++)
+            for(int i = 0; i<contadorRatones; i++)
             {
-                moved = false;
                 EnableMouseControl(i);
-                while (!moved)
+                while (!m_Mouses[i].GetComponent<MouseMovement>().move)
                 {
-                   
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        
-                        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        if (Physics.Raycast(ray, out hit, layerMask))
-                        {
-                           
-                            moved = m_Mouse[i].Move(hit.collider.gameObject, m_Mouse[i].m_Position, out newPosition);
-                            m_Mouse[i].SetPosition(newPosition);
-
-                        }
-                    }
-                    
                     yield return null;
                 }
                 DisableMouseControl();
@@ -119,37 +117,31 @@ public class GameManager :  NetworkBehaviour
     }
 
     // This function is used to turn all the tanks back on and reset their positions and properties.
-    private void ResetAllMouses()
-    {
-        for (int i = 0; i < m_Mouse.Length; i++)
-        {
-            m_Mouse[i].Reset();
-        }
-    }
+ 
 
     private void EnableMousesControl()
     {
-        for (int i = 0; i < m_Mouse.Length; i++)
+        for (int i = 0; i < contadorRatones; i++)
         {
-            m_Mouse[i].EnableControl();
+            m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
         }
     }
 
     private void EnableMouseControl(int i)
     {
 
-         m_Mouse[i].EnableControl();
+         m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
 
     }
 
     private void DisableMouseControl()
     {
-        for (int i = 0; i < m_Mouse.Length; i++)
+        for (int i = 0; i < contadorRatones; i++)
         {
-            m_Mouse[i].DisableControl();
+            m_Mouses[i].GetComponent<MouseMovement>().DisableControl();
         }
     }
-
+    
 
   
 }

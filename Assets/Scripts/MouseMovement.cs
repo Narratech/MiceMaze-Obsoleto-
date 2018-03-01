@@ -13,6 +13,8 @@ public class MouseMovement : NetworkBehaviour{
 
     int turno_juego;
 
+    public bool move = false;
+
 
     private Rigidbody m_Rigidbody;
 
@@ -25,8 +27,12 @@ public class MouseMovement : NetworkBehaviour{
 
     private void Start()
     {
-        m_PlayerNumber = manager.GetComponent<GameManager>().turno;
-        manager.GetComponent<GameManager>().cambiarTurno(1);
+        manager = GameObject.Find("GameManager");
+        manager.GetComponent<GameManager>().IncrementaRatones();
+        m_PlayerNumber = manager.GetComponent<GameManager>().contadorRatones;
+        manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
+
+
     }
 
     private void Awake()
@@ -36,7 +42,7 @@ public class MouseMovement : NetworkBehaviour{
         //var manager = GetComponent<GameManager>();
         //m_PlayerNumber = manager.contadorRatones;
         //manager.incrementarRatones();
-        manager = GameObject.Find("GameManager");
+        
     }
 
     private void OnEnable()
@@ -60,6 +66,11 @@ public class MouseMovement : NetworkBehaviour{
         {
             return;
         }
+
+        if(m_PlayerNumber != manager.GetComponent<GameManager>().turno)
+        {
+            return;
+        }
        
         if (Input.GetMouseButtonDown(0))
         {
@@ -73,7 +84,11 @@ public class MouseMovement : NetworkBehaviour{
                 pos.z = (int)m_Rigidbody.position.z / 10;
                 if(hit.collider.gameObject.layer == 8)
                 {
-                    Move(hit.collider.gameObject, pos);
+                    if(Move(hit.collider.gameObject, pos))
+                    {
+                        move = true;
+                        CmdChangeTurn();
+                    }
                 }
                
             }
@@ -129,4 +144,24 @@ public class MouseMovement : NetworkBehaviour{
         posTile.y = 2.5f;
         m_Rigidbody.transform.SetPositionAndRotation(posTile, tile.transform.rotation);
     }
+
+   
+    private void CmdChangeTurn()
+    {
+        manager.GetComponent<GameManager>().CambiarTurno();
+        Debug.Log("Cmd");
+    }
+
+    public void DisableControl()
+    {
+        this.enabled = false;
+        move = false;
+    }
+
+    public void EnableControl()
+    {
+        this.enabled = true;
+
+    }
+
 }
