@@ -33,7 +33,7 @@ public class GameManager :  NetworkBehaviour
 
         //SpawnAllMouses();
 
-        StartCoroutine(GameLoop());
+        //StartCoroutine(GameLoop());
     }
 
     public void IncrementaRatones()
@@ -76,7 +76,7 @@ public class GameManager :  NetworkBehaviour
     // Update is called once per frame
     private IEnumerator GameLoop()
     {
-        print("hola");
+    
         yield return StartCoroutine(RoundStarting());
 
         yield return StartCoroutine(RoundPlaying());
@@ -130,7 +130,7 @@ public class GameManager :  NetworkBehaviour
     private void EnableMouseControl(int i)
     {
 
-         //m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
+         m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
 
     }
 
@@ -138,7 +138,7 @@ public class GameManager :  NetworkBehaviour
     {
         for (int i = 0; i < contadorRatones; i++)
         {
-           //m_Mouses[i].GetComponent<MouseMovement>().DisableControl();
+           m_Mouses[i].GetComponent<MouseMovement>().DisableControl();
         }
     }
     

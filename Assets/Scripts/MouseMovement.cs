@@ -31,8 +31,8 @@ public class MouseMovement : NetworkBehaviour{
         manager = GameObject.Find("GameManager");
         manager.GetComponent<GameManager>().IncrementaRatones();
         m_PlayerNumber = manager.GetComponent<GameManager>().contadorRatones;
-        //manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
-        manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber] = m_Rigidbody.gameObject;
+        manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
+       
     }
 
     private void Awake()
@@ -59,12 +59,12 @@ public class MouseMovement : NetworkBehaviour{
     [ClientRpc]
     void RpcNotificarMovimiento()
     {
-        //GameManager[] p = manager.GetComponents<GameManager>();
+        
         manager.GetComponent<GameManager>().CambiarTurno();
     }
 
     [Command]
-    void Cmdprueba()
+    void CmdNotificarMovimiento()
     {
         RpcNotificarMovimiento();
     }
@@ -104,9 +104,8 @@ public class MouseMovement : NetworkBehaviour{
                         if (isServer)
                             RpcNotificarMovimiento();
                         else
-                            Cmdprueba();
-                        //move = true;
-                        //CmdChangeTurn();
+                            CmdNotificarMovimiento();
+                        
                     }
                 }
                
@@ -162,13 +161,6 @@ public class MouseMovement : NetworkBehaviour{
         Vector3 posTile = tile.transform.position;
         posTile.y = 2.5f;
         m_Rigidbody.transform.SetPositionAndRotation(posTile, tile.transform.rotation);
-    }
-
-   
-    private void CmdChangeTurn()
-    {
-        manager.GetComponent<GameManager>().CambiarTurno();
-        Debug.Log("Cmd");
     }
 
     public void DisableControl()
