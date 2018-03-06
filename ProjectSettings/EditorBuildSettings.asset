@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 5432d3bdb2e7f6b41877642b1627e892
   - enabled: 0
-    path: Assets/Scenes/Mace.unity
+    path: 
     guid: 087203f1cc43ea747b97845529dc5456
   - enabled: 1
     path: Assets/Scenes/EscenaCreditos.unity

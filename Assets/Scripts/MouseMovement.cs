@@ -5,15 +5,16 @@ using UnityEngine.Networking;
 public class MouseMovement : NetworkBehaviour{
 
 
+    [SyncVar]
     public int m_PlayerNumber = 0;//1;
     public GameObject manager;
 
     [SyncVar]
     int mi_turno;
-
-    int turno_juego;
+    
 
     public bool move = false;
+    public bool te_has_movido = false;
 
 
     private Rigidbody m_Rigidbody;
@@ -30,18 +31,13 @@ public class MouseMovement : NetworkBehaviour{
         manager = GameObject.Find("GameManager");
         manager.GetComponent<GameManager>().IncrementaRatones();
         m_PlayerNumber = manager.GetComponent<GameManager>().contadorRatones;
-        manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
-
-
+        //manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
+        manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber] = m_Rigidbody.gameObject;
     }
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        //m_PlayerNumber = 5;
-        //var manager = GetComponent<GameManager>();
-        //m_PlayerNumber = manager.contadorRatones;
-        //manager.incrementarRatones();
         
     }
 
@@ -53,6 +49,24 @@ public class MouseMovement : NetworkBehaviour{
     private void OnDisable()
     {
         m_Rigidbody.isKinematic = true;
+    }
+
+    public void moverse()
+    {
+        this.move = true;
+    }
+
+    [ClientRpc]
+    void RpcNotificarMovimiento()
+    {
+        //GameManager[] p = manager.GetComponents<GameManager>();
+        manager.GetComponent<GameManager>().CambiarTurno();
+    }
+
+    [Command]
+    void Cmdprueba()
+    {
+        RpcNotificarMovimiento();
     }
 
     private void Update()
@@ -71,6 +85,7 @@ public class MouseMovement : NetworkBehaviour{
         {
             return;
         }
+
        
         if (Input.GetMouseButtonDown(0))
         {
@@ -86,8 +101,12 @@ public class MouseMovement : NetworkBehaviour{
                 {
                     if(Move(hit.collider.gameObject, pos))
                     {
-                        move = true;
-                        CmdChangeTurn();
+                        if (isServer)
+                            RpcNotificarMovimiento();
+                        else
+                            Cmdprueba();
+                        //move = true;
+                        //CmdChangeTurn();
                     }
                 }
                

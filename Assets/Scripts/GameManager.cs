@@ -11,7 +11,7 @@ public class GameManager :  NetworkBehaviour
     public int m_NumTurnos;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
-    public GameObject[] m_Mouses = new GameObject[4];
+    public GameObject[] m_Mouses = new GameObject[5];
     public GameObject m_MousePrefab;
 
 
@@ -23,6 +23,9 @@ public class GameManager :  NetworkBehaviour
 
     public int contadorRatones = 0;
     // Use this for initialization
+
+    
+
     void Start()
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
@@ -32,8 +35,6 @@ public class GameManager :  NetworkBehaviour
 
         StartCoroutine(GameLoop());
     }
-
-    
 
     public void IncrementaRatones()
     {
@@ -49,10 +50,9 @@ public class GameManager :  NetworkBehaviour
             turno = 1;
         }
            
-       
     }
 
- 
+    
 
 
     /*private void SpawnAllMouses()
@@ -130,7 +130,7 @@ public class GameManager :  NetworkBehaviour
     private void EnableMouseControl(int i)
     {
 
-         m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
+         //m_Mouses[i].GetComponent<MouseMovement>().EnableControl();
 
     }
 
@@ -138,7 +138,7 @@ public class GameManager :  NetworkBehaviour
     {
         for (int i = 0; i < contadorRatones; i++)
         {
-            m_Mouses[i].GetComponent<MouseMovement>().DisableControl();
+           //m_Mouses[i].GetComponent<MouseMovement>().DisableControl();
         }
     }
     
