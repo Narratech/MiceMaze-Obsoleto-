@@ -145,6 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
+  manager: {fileID: 0}
+  jugador: {fileID: 114231102884101654, guid: 2d9611cbe54c97449b5c85b315bfbf89, type: 2}
+  move: 0
+  te_has_movido: 0
 --- !u!114 &114601148331937760
 MonoBehaviour:
   m_ObjectHideFlags: 1

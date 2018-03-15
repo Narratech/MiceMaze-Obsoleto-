@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
-
+using UnityEngine.UI;
 
 
 
@@ -14,6 +14,7 @@ public class GameManager :  NetworkBehaviour
     public GameObject[] m_Mouses = new GameObject[5];
     public GameObject m_MousePrefab;
 
+	public Text prueba;
 
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
@@ -30,7 +31,8 @@ public class GameManager :  NetworkBehaviour
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
-
+		prueba.color = Color.blue;
+		prueba.text = "" + turno;
         //SpawnAllMouses();
 
         //StartCoroutine(GameLoop());
@@ -49,7 +51,7 @@ public class GameManager :  NetworkBehaviour
         {
             turno = 1;
         }
-           
+		prueba.text = "" + turno;
     }
 
     

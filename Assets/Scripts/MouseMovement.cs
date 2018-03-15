@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class MouseMovement : NetworkBehaviour{
 
@@ -8,6 +9,8 @@ public class MouseMovement : NetworkBehaviour{
     [SyncVar]
     public int m_PlayerNumber = 0;//1;
     public GameObject manager;
+
+	public Text jugador;
 
     [SyncVar]
     int mi_turno;
@@ -32,7 +35,9 @@ public class MouseMovement : NetworkBehaviour{
         manager.GetComponent<GameManager>().IncrementaRatones();
         m_PlayerNumber = manager.GetComponent<GameManager>().contadorRatones;
         manager.GetComponent<GameManager>().m_Mouses[m_PlayerNumber - 1] = m_Rigidbody.gameObject;
-       
+		jugador.color = Color.red;
+		jugador.text = "Jugador: " + m_PlayerNumber;
+		jugador.enabled = true;
     }
 
     private void Awake()
@@ -85,7 +90,6 @@ public class MouseMovement : NetworkBehaviour{
         {
             return;
         }
-
        
         if (Input.GetMouseButtonDown(0))
         {
