@@ -31,7 +31,11 @@ public class GameManager :  NetworkBehaviour
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
+<<<<<<< HEAD
 		prueba.color = Color.red;
+=======
+		prueba.color = Color.blue;
+>>>>>>> a5a0f28d56e75161bfeaf7632a6a9d97e254e8e8
 		prueba.text = "" + turno;
         //SpawnAllMouses();
 
