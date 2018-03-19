@@ -10,12 +10,9 @@ public class MouseMovement : NetworkBehaviour{
     public int m_PlayerNumber = 0;//1;
     public GameObject manager;
 
-<<<<<<< HEAD
 	[SyncVar]
 	public Color mi_color = Color.red;
 
-=======
->>>>>>> a5a0f28d56e75161bfeaf7632a6a9d97e254e8e8
 	public Text jugador;
 
     [SyncVar]
